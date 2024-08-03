@@ -31,7 +31,5 @@ def maxDifference(num):
 
     return max_num - min_num
 
-
-# Example usage
 print(maxDifference(11891))
 print(maxDifference(919))
