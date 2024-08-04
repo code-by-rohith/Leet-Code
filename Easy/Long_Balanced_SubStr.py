@@ -47,3 +47,4 @@ class Solution:
 
 solution = Solution()
 print(solution.findTheLongestBalancedSubstring("0000011111011"))
+
