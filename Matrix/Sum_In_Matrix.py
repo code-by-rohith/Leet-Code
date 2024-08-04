@@ -3,17 +3,14 @@ from typing import List
 
 class Solution:
     def matrixSum(self, nums: List[List[int]]) -> int:
-        # Number of rows and columns
         rows, cols = len(nums), len(nums[0])
 
-        # Sort each row in descending order
         for row in nums:
             row.sort(reverse=True)
 
-        # Calculate the sum of the maximum values in each column
         max_sum = 0
         for col in range(cols):
-            # Get the maximum value for the current column
+
             column_max = max(nums[row][col] for row in range(rows))
             max_sum += column_max
 
