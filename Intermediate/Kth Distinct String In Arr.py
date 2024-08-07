@@ -34,8 +34,8 @@ class Solution:
         else:
             return temp[k-1]
 obj=Solution()
-arr=["a","a","b","b","c"]
+arr=["a","a","b","b","c","d"]
 k=2
-print((obj.kthDistinct(arr,1)))
+print((obj.kthDistinct(arr,2)))
 
 
