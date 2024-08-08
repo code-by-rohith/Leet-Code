@@ -29,6 +29,6 @@ class Solution:
 
         return helper(num)
 
-num =65655
+num =int(input("Enter The Cost : "))
 obj=Solution()
-print(obj.numberToWords(num))
+print("Rupees : ",obj.numberToWords(num))
