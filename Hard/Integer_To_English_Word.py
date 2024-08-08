@@ -1,31 +1,34 @@
 class Solution:
-    def __init__(self):
-        self.less_than_20 = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
-                             "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen",
-                             "Eighteen", "Nineteen"]
-        self.tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
-        self.thousands = ["", "Thousand", "Million", "Billion"]
-
     def numberToWords(self, num: int) -> str:
-        if num == 0:
-            return "Zero"
+        def helper(num):
 
-        res = ""
-        for i in range(len(self.thousands)):
-            if num % 1000 != 0:
-                res = self.helper(num % 1000) + self.thousands[i] + " " + res
-            num //= 1000
-        return res.strip()
+            if num < 20:
+                s = belowTwenty[num]
+            elif num < 100:
+                s = tens[num // 10] + ' ' + belowTwenty[num % 10]
+            elif num < 1000:
+                s = helper(num // 100) + ' Hundred ' + helper(num % 100)
+            elif num < 1000000:
+                s = helper(num // 1000) + ' Thousand ' + helper(num % 1000)
+            elif num < 1000000000:
+                s = helper(num // 1000000) + ' Million ' + helper(num % 1000000)
+            else:
+                s = helper(num // 1000000000) + ' Billion ' + helper(num % 1000000000)
 
-    def helper(self, num: int) -> str:
+            return s.strip()
+
         if num == 0:
-            return ""
-        elif num < 20:
-            return self.less_than_20[num] + " "
-        elif num < 100:
-            return self.tens[num // 10] + " " + self.helper(num % 10)
-        else:
-            return self.less_than_20[num // 100] + " Hundred " + self.helper(num % 100)
+            return 'Zero'
+
+        belowTwenty = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight',
+                       'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen',
+                       'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen']
+
+        tens = ['', 'Ten', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty',
+                'Seventy', 'Eighty', 'Ninety']
+
+        return helper(num)
+
 num =65655
 obj=Solution()
 print(obj.numberToWords(num))
