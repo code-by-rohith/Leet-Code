@@ -18,3 +18,4 @@ class Solution:
 s="()[]{}"
 obj=Solution()
 print(obj.isValid(s))
+
