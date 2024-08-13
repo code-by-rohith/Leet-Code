@@ -15,7 +15,7 @@ class Solution:
                     return False
                 stack.pop()
         return not stack
-s="()[][{}]"
+s="(())"
 obj=Solution()
 print(obj.isValid(s))
 
