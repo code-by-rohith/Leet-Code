@@ -21,12 +21,6 @@
 # Explanation: The longest balanced substring is "0011", which has length 4.
 
 
-
-
-
-
-
-
 class Solution:
     def findTheLongestBalancedSubstring(self, s: str) -> int:
         best = 0
