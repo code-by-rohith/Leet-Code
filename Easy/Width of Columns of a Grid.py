@@ -46,4 +46,8 @@ class Solution:
 # Test cases
 solution = Solution()
 print(solution.findColumnWidth([[1], [22], [333]]))  # Output: [3]
-print(solution.findColumnWidth([[-15, 1, 3], [15, 7, 12], [5, 6, -2]]))  # Output: [3, 1, 2]
+print(solution.findColumnWidth([[-15, 1, 3], [15, 7, 12], [5, 6, -2]])) # Output: [3, 1, 2]
+
+grid=[[-15, 1, 3], [15, 7, 12], [5, 6, -2]]
+a=zip(*grid)
+print(a)

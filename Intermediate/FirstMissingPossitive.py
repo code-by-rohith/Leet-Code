@@ -11,7 +11,6 @@ class Solution:
 
         return missing_positive
 
-
-nums = [7, 8, 9, 11, 12]
+nums = [1, 2,3]
 obj = Solution()
 print(obj.firstMissingPositive(nums))

@@ -31,5 +31,5 @@ def split_min_sum(num):
 
     return num1 + num2
 
-print(split_min_sum(4325))
+
 print(split_min_sum(12389))
