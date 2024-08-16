@@ -18,7 +18,6 @@ def twoSum1(nums, target):
                 arr.append(j)
                 return arr  # return immediately after finding the first pair
     return arr  # return an empty list if no pair is found
-
 nums = [3, 4, 8,4,2]
 target = 6
 result = twoSum1(nums, target)
