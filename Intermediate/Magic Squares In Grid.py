@@ -35,6 +35,3 @@ sol = Solution()
 print(sol.numMagicSquaresInside(grid1))
 
 
-
-
-
