@@ -11,3 +11,5 @@ class Solution:
 
 obj=Solution()
 print(obj.minSteps(50))
+
+
