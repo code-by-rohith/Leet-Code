@@ -9,6 +9,7 @@ class Solution:
             factor += 1
         return steps
 
+
 obj=Solution()
 print(obj.minSteps(50))
 
