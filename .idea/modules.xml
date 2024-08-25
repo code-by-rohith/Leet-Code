@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Leet-Code.iml" filepath="$PROJECT_DIR$/.idea/Leet-Code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../strives a2z/.idea/pycharm.iml" filepath="$PROJECT_DIR$/../strives a2z/.idea/pycharm.iml" />
     </modules>
   </component>
 </project>

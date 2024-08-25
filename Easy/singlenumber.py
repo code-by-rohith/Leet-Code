@@ -6,3 +6,5 @@ class Solution:
         for num in nums:
             result ^= num
         return result
+obj =Solution()
+print(obj.singleNumber(nums=[1,5,8,8,1,3,2,3,2]))
