@@ -12,6 +12,7 @@
 # Explanation: In this case, n = 3, but the first row and the first column do not contain the numbers 2 or 3.
 # Hence, we return false.
 
+
 def is_valid_matrix(matrix):
     n = len(matrix)
     if n == 0:
