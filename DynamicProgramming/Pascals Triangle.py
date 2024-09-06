@@ -1,7 +1,7 @@
 from typing import List
 
 def generate(numRows: int) -> List[List[int]]:
-    res = [[1]]git
+    res = [[1]]
 
     for i in range(numRows - 1):
         temp = [0] + res[-1] + [0]
