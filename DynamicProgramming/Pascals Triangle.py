@@ -1,7 +1,7 @@
 from typing import List
 
 def generate(numRows: int) -> List[List[int]]:
-    res = [[1]]  # Initialize the result with the first row
+    res = [[1]]git
 
     for i in range(numRows - 1):
         temp = [0] + res[-1] + [0]
@@ -15,5 +15,5 @@ def generate(numRows: int) -> List[List[int]]:
 
 # Test cases
 print(generate(5))
-print(generate(4))
+print(generate(10))
 

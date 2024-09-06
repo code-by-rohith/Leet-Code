@@ -6,6 +6,6 @@ def getRow(rowIndex):
             row[j] = row[j] + row[j - 1]
     return row
 
-rowIndex = 30
+rowIndex = 3
 print(getRow(rowIndex))
 
