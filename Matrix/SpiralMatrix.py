@@ -11,7 +11,7 @@ def spiralOrder(matrix: List[List[int]]) -> List[int]:
 
     while top <= bottom and left <= right:
         for i in range(left, right + 1):
-            res.append(matrix[top][i])
+             res.append(matrix[top][i])
         top += 1
         for i in range(top, bottom + 1):
             res.append(matrix[i][right])
@@ -19,7 +19,8 @@ def spiralOrder(matrix: List[List[int]]) -> List[int]:
         if top <= bottom:
             for i in range(right, left - 1, -1):
                 res.append(matrix[bottom][i])
-            bottom -= 1
+            bottom-=1
+
         if left <= right:
             for i in range(bottom, top - 1, -1):
                 res.append(matrix[i][left])
