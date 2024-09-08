@@ -1,3 +1,4 @@
+import time
 def three_sum(arr, k):
     n = len(arr)
     result = set()
@@ -16,6 +17,5 @@ def three_sum(arr, k):
     return list(result)
 
 
-arr = [7,8,50,2,5]
-k = 15
-print(three_sum(arr, k))
+
+
