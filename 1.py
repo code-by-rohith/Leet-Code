@@ -3,13 +3,11 @@ import streamlit as st
 
 st.title("Custom Marks Distribution Plot")
 
-names = st.text_input("Enter names :")
+names = st.text_input("Enter names (comma-separated):")
 names = [name.strip() for name in names.split(',')]
-
 
 subjects = st.text_input("Enter subjects (comma-separated):")
 subjects = [subject.strip() for subject in subjects.split(',')]
-
 
 marks = {}
 
@@ -31,19 +29,18 @@ if st.button('Generate Plot'):
 
     st.pyplot(fig)
 
-st.title("Code For This FrameWork")
-st.write("""import matplotlib.pyplot as plt
+st.title("Code For This Framework")
+st.write("""
+import matplotlib.pyplot as plt
 import streamlit as st
 
 st.title("Custom Marks Distribution Plot")
 
-names = st.text_input("Enter names :")
+names = st.text_input("Enter names (comma-separated):")
 names = [name.strip() for name in names.split(',')]
-
 
 subjects = st.text_input("Enter subjects (comma-separated):")
 subjects = [subject.strip() for subject in subjects.split(',')]
-
 
 marks = {}
 
@@ -64,5 +61,4 @@ if st.button('Generate Plot'):
     ax.grid(True)
 
     st.pyplot(fig)
-
-st.title("Code For This FrameWork")""")
+""")
