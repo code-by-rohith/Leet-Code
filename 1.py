@@ -3,11 +3,13 @@ import streamlit as st
 
 st.title("Custom Marks Distribution Plot")
 
+names = st.text_input("Enter names :")
+names = [name.strip() for name in names.split(',')]
+
+
 subjects = st.text_input("Enter subjects (comma-separated):")
 subjects = [subject.strip() for subject in subjects.split(',')]
 
-names = st.text_input("Enter names (comma-separated):")
-names = [name.strip() for name in names.split(',')]
 
 marks = {}
 
