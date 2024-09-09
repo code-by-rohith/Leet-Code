@@ -30,7 +30,7 @@ if st.button('Generate Plot'):
     st.pyplot(fig)
 
 st.title("Code For This Framework")
-st.write("""
+code = """
 import matplotlib.pyplot as plt
 import streamlit as st
 
@@ -61,4 +61,6 @@ if st.button('Generate Plot'):
     ax.grid(True)
 
     st.pyplot(fig)
-""")
+"""
+
+st.code(code, language='python')
