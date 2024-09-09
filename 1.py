@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import streamlit as st
 
-name = ['Abhishek', 'Sandeep', 'Vikas', 'Viswa']
+name = 'Abhishek'
 subjects = ['Math', 'Physics', 'Chemistry', 'Biology', 'English']
 num_subjects = len(subjects)
 
