@@ -1,43 +1,37 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import streamlit as st
 
-names = ['Abhishek', 'Sandeep', 'Vikas', 'Viswa']
-subjects = ['Math', 'Physics', 'Chemistry', 'Biology', 'English']
-num_subjects = len(subjects)
 
-np.random.seed(0)
-marks = {
-    name: np.random.randint(50, 100, num_subjects) for name in names
-}
+st.title("Custom Marks Distribution Plot")
 
-fig, axs = plt.subplots(2, 2, figsize=(12, 10))
 
-axs[0, 0].bar(subjects, marks['Abhishek'])
-axs[0, 0].set_title('Abhishek')
-axs[0, 0].set_xlabel('Subjects')
-axs[0, 0].set_ylabel('Marks')
-axs[0, 0].grid(True)
+subjects = st.text_input("Enter subjects (comma-separated):")
+subjects = [subject.strip() for subject in subjects.split(',')]
 
-axs[0, 1].bar(subjects, marks['Sandeep'])
-axs[0, 1].set_title('Sandeep')
-axs[0, 1].set_xlabel('Subjects')
-axs[0, 1].set_ylabel('Marks')
-axs[0, 1].grid(True)
 
-axs[1, 0].bar(subjects, marks['Vikas'])
-axs[1, 0].set_title('Vikas')
-axs[1, 0].set_xlabel('Subjects')
-axs[1, 0].set_ylabel('Marks')
-axs[1, 0].grid(True)
+names = st.text_input("Enter names (comma-separated):")
+names = [name.strip() for name in names.split(',')]
 
-axs[1, 1].bar(subjects, marks['Viswa'])
-axs[1, 1].set_title('Viswa')
-axs[1, 1].set_xlabel('Subjects')
-axs[1, 1].set_ylabel('Marks')
-axs[1, 1].grid(True)
+marks = {}
 
-plt.tight_layout()
 
-st.title("Marks Distribution for Four People")
-st.pyplot(fig)
+for name in names:
+    st.write(f"Enter marks for {name}:")
+    marks[name] = [st.number_input(f"{subject}:", min_value=0, max_value=100, value=0) for subject in subjects]
+
+# Button to generate the plot
+if st.button('Generate Plot'):
+    fig, axs = plt.subplots(2, 2, figsize=(12, 10))
+
+    for i, name in enumerate(names):
+        row = i // 2
+        col = i % 2
+        axs[row, col].bar(subjects, marks[name])
+        axs[row, col].set_title(name)
+        axs[row, col].set_xlabel('Subjects')
+        axs[row, col].set_ylabel('Marks')
+        axs[row, col].grid(True)
+
+    plt.tight_layout()
+
+    st.pyplot(fig)
