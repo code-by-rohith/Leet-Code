@@ -2,31 +2,47 @@ import matplotlib.pyplot as plt
 import numpy as np
 import streamlit as st
 
-names = ['Abhishek', 'Sandeep', 'Vikas', 'Viswa']
-num_companies = 10
-companies = [f'Company {i+1}' for i in range(num_companies)]
+name = 'Abhishek'
+subjects = ['Math', 'Physics', 'Chemistry', 'Biology', 'English']
+num_subjects = len(subjects)
 
+# Generate random marks for 5 subjects
+np.random.seed(0)  # For reproducibility
+marks = np.random.randint(50, 100, num_subjects)
 
-np.random.seed(0)
-chances = np.random.rand(len(names), num_companies)
+# Create the plot with 4 subplots
+fig, axs = plt.subplots(2, 2, figsize=(12, 10))
 
+# First subplot
+axs[0, 0].bar(subjects, marks)
+axs[0, 0].set_title(f'{name} - Subplot 1')
+axs[0, 0].set_xlabel('Subjects')
+axs[0, 0].set_ylabel('Marks')
+axs[0, 0].grid(True)
 
-chances[1] += 0.5
+# Second subplot with some variation
+axs[0, 1].bar(subjects, marks + np.random.randint(-10, 10, num_subjects))
+axs[0, 1].set_title(f'{name} - Subplot 2')
+axs[0, 1].set_xlabel('Subjects')
+axs[0, 1].set_ylabel('Marks')
+axs[0, 1].grid(True)
 
-chances[2] += 0.2
-chances = np.clip(chances / chances.max(), 0, 1)
+# Third subplot with different variation
+axs[1, 0].bar(subjects, marks + np.random.randint(-20, 20, num_subjects))
+axs[1, 0].set_title(f'{name} - Subplot 3')
+axs[1, 0].set_xlabel('Subjects')
+axs[1, 0].set_ylabel('Marks')
+axs[1, 0].grid(True)
 
-fig, ax = plt.subplots(figsize=(10, 6))
+# Fourth subplot with another variation
+axs[1, 1].bar(subjects, marks + np.random.randint(-5, 5, num_subjects))
+axs[1, 1].set_title(f'{name} - Subplot 4')
+axs[1, 1].set_xlabel('Subjects')
+axs[1, 1].set_ylabel('Marks')
+axs[1, 1].grid(True)
 
-ax.plot(companies, chances[0], marker='o', label=names[0])
-ax.plot(companies, chances[1], marker='o', label=names[1])
-ax.plot(companies, chances[2], marker='o', label=names[2])
-ax.plot(companies, chances[3], marker='o', label=names[3])
+plt.tight_layout()
 
-ax.set_xlabel('Companies')
-ax.set_ylabel('Chance of Placement')
-ax.set_title('Placement Chances for Different People in Various Companies')
-ax.legend(loc='best')
-ax.grid(True)
-st.title("Placement Chances Visualization")
+# Display the plot in Streamlit
+st.title("Marks Distribution Across 4 Subplots")
 st.pyplot(fig)
