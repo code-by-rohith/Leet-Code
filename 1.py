@@ -1,38 +1,32 @@
-import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
+import streamlit as st
+
+names = ['Abhishek', 'Sandeep', 'Vikas', 'Viswa']
+num_companies = 10
+companies = [f'Company {i+1}' for i in range(num_companies)]
 
 
-st.title("Enhanced Plot Example")
+np.random.seed(0)
+chances = np.random.rand(len(names), num_companies)
 
 
-x = np.linspace(0, 10, 100)
-y_sin = np.sin(x)
-y_cos = np.cos(x)
+chances[1] += 0.5
 
-fig, ax = plt.subplots(figsize=(8, 6))
+chances[2] += 0.2
+chances = np.clip(chances / chances.max(), 0, 1)
 
+fig, ax = plt.subplots(figsize=(10, 6))
 
-ax.plot(x, y_sin, label='sin(x)', color='blue', linestyle='-', linewidth=2, marker='o', markersize=5, markerfacecolor='red', markeredgewidth=2)
+ax.plot(companies, chances[0], marker='o', label=names[0])
+ax.plot(companies, chances[1], marker='o', label=names[1])
+ax.plot(companies, chances[2], marker='o', label=names[2])
+ax.plot(companies, chances[3], marker='o', label=names[3])
 
-
-ax.plot(x, y_cos, label='cos(x)', color='green', linestyle='--', linewidth=2, marker='s', markersize=5, markerfacecolor='yellow', markeredgewidth=2)
-
-
-ax.grid(True, which='both', linestyle='--', linewidth=0.7)
-
-# Customize axes and title
-ax.set_xlabel('X-axis', fontsize=12, fontweight='bold', color='darkblue')
-ax.set_ylabel('Y-axis', fontsize=12, fontweight='bold', color='darkblue')
-ax.set_title('Sine & Cosine Waves', fontsize=16, fontweight='bold', color='purple')
-
-ax.set_xlim([0, 10])
-ax.set_ylim([-1.5, 1.5])
-ax.xaxis.set_ticks(np.arange(0, 11, 1))
-ax.yaxis.set_ticks(np.arange(-1.5, 1.6, 0.5))
-
-
-ax.legend(loc='upper right', fontsize=12)
-
-
+ax.set_xlabel('Companies')
+ax.set_ylabel('Chance of Placement')
+ax.set_title('Placement Chances for Different People in Various Companies')
+ax.legend(loc='best')
+ax.grid(True)
+st.title("Placement Chances Visualization")
 st.pyplot(fig)
