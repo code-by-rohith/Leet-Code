@@ -1,37 +1,30 @@
 import matplotlib.pyplot as plt
 import streamlit as st
 
-
 st.title("Custom Marks Distribution Plot")
-
 
 subjects = st.text_input("Enter subjects (comma-separated):")
 subjects = [subject.strip() for subject in subjects.split(',')]
-
 
 names = st.text_input("Enter names (comma-separated):")
 names = [name.strip() for name in names.split(',')]
 
 marks = {}
 
-
 for name in names:
     st.write(f"Enter marks for {name}:")
     marks[name] = [st.number_input(f"{subject}:", min_value=0, max_value=100, value=0) for subject in subjects]
 
-# Button to generate the plot
 if st.button('Generate Plot'):
-    fig, axs = plt.subplots(2, 2, figsize=(12, 10))
+    fig, ax = plt.subplots(figsize=(12, 8))
 
-    for i, name in enumerate(names):
-        row = i // 2
-        col = i % 2
-        axs[row, col].bar(subjects, marks[name])
-        axs[row, col].set_title(name)
-        axs[row, col].set_xlabel('Subjects')
-        axs[row, col].set_ylabel('Marks')
-        axs[row, col].grid(True)
+    for name in names:
+        ax.plot(subjects, marks[name], label=name, marker='o')
 
-    plt.tight_layout()
+    ax.set_title('Marks Distribution')
+    ax.set_xlabel('Subjects')
+    ax.set_ylabel('Marks')
+    ax.legend()
+    ax.grid(True)
 
     st.pyplot(fig)
