@@ -16,4 +16,5 @@ def sorted_squares(nums):
     return result
 
 
+
 print(sorted_squares(nums=[-5,-2,0,1,2,8,9,17]))
