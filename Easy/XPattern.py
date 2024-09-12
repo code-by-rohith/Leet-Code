@@ -9,6 +9,5 @@ def print_x_number_pattern(n):
         print()
         num += 1
 
-# Example usage
 size = 6
 print_x_number_pattern(size)
