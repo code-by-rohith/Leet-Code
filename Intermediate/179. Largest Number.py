@@ -1,8 +1,10 @@
 def largestNumber(nums):
     array = list(map(str, nums))
+    print(array)
     def compare(x):
         return x * 10
     array.sort(key=compare, reverse=True)
+    print(array)
     if array[0] == "0":
         return "0"
     largest = ''.join(array)
@@ -10,5 +12,8 @@ def largestNumber(nums):
     return largest
 
 
-print(largestNumber([10, 2]))
-print(largestNumber([3, 30, 34, 5, 9]))
+print(largestNumber([34, 30, 3, 9]))
+
+a="30"
+b="5"
+print(a>b)
