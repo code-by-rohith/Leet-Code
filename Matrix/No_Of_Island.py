@@ -10,6 +10,7 @@
 # bold in matrix at 1, 1 and 2, 2)
 #
 
+
 def no_of_islands(matrix):
     def dfs(x, y):
         if x < 0 or y < 0 or x >= len(matrix) or y >= len(matrix[0]) or matrix[x][y] != 1:
