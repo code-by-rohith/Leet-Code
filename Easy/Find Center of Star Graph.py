@@ -13,3 +13,4 @@ print(solution.findCenter(edges1))
 
 edges2 = [[1, 2], [5, 1], [1, 3], [1, 4]]
 print(solution.findCenter(edges2))
+
