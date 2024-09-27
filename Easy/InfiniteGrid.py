@@ -8,6 +8,7 @@
 # •	Output:
 #      5 5
 
+
 def after_movements(movements, x, y):
     for move in movements:
         if move == 'U':
