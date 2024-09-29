@@ -10,6 +10,7 @@ class Solution:
 
         return newarr.tolist()
 
+
 original=[5,8,6,4,2]
 obj =Solution()
 print(obj.construct2DArray(original,5,1))
