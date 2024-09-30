@@ -16,12 +16,13 @@ def twoSum1(nums, target):
             if nums[i] + nums[j] == target:
                 arr.append(i)
                 arr.append(j)
-                return arr  # return immediately after finding the first pair
-    return arr  # return an empty list if no pair is found
+                return arr
+    return arr
 nums = [3, 4, 8,4,2]
 target = 6
 result = twoSum1(nums, target)
 print(result)
+
 
 
 
