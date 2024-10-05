@@ -1,4 +1,4 @@
-def moain(nums):
+def main(nums):
     j= 0
     for i in range(len(nums)):
         if nums[i] != 0:
@@ -6,4 +6,4 @@ def moain(nums):
             j += 1
     return nums
 
-print(main(nums=[1,0,2,3,5,0,0,1]))
+print(main(nums=[0,1,0,3,12]))

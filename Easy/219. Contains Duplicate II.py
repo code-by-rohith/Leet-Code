@@ -9,4 +9,4 @@ def containsNearbyDuplicate(nums, k):
 
     return False
 
-print(containsNearbyDuplicate([1, 2, 3, 1], 3))
+print(containsNearbyDuplicate([10, 27, 33, 27], 30))
