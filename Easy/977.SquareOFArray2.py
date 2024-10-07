@@ -10,10 +10,12 @@ def main(arr):
             res.append(arr[right]**2)
             right -=1
     return res[::-1]
-
+  
 
 arr = [-3, -2, 0, 1, 2, 3, 4, 5]
 print(main(arr))
+
+
 
 
 
