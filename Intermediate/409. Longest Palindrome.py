@@ -1,14 +1,22 @@
-def longestPalindrome(s: str) -> int:
-    seen = set()
-    res = 0
 
-    for c in s:
-        if c in seen:
-            seen.remove(c)
-            res += 2
+def longestPalindrome(s):
+    letters = {}
+    for char in s:
+        if char not in letters:
+            letters[char] = 1
         else:
-            seen.add(c)
+            letters[char] += 1
+    res = 0
+    odd_found = False
+    for count in letters.values():
+        if count % 2 == 0:
+            res += count
+        else:
+            res += count - 1
+            odd_found = True
+    if odd_found:
+        res += 1
+    return res
 
-    return res + (1 if seen else 0)
-
-print(longestPalindrome("abccccdd"))  # Output: 7
+s = "abccccdd"
+print(longestPalindrome(s))
