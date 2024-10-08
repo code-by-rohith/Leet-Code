@@ -18,5 +18,5 @@ def longestPalindrome(s):
         res += 1
     return res
 
-s = "abccccdd"
+s = "abccccddaa"
 print(longestPalindrome(s))
