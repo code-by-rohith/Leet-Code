@@ -12,6 +12,6 @@ class Solution:
         else:
             return False
 
-x=5321235
+x=532
 obj=Solution()
 print(obj.isPalindrome(x))
