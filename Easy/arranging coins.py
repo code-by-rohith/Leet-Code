@@ -10,4 +10,5 @@ def main(n):
             l = mid + 1
             res = max(mid, res)
     return res
+
 print(main(5))
