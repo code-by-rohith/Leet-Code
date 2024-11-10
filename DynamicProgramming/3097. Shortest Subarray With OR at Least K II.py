@@ -12,5 +12,4 @@ def main(nums, k):
     return min_len if min_len != float('inf') else -1
 
 
-# Test cases
 print(main([1, 2, 3], 2))
