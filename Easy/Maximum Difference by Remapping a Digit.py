@@ -17,6 +17,7 @@
        - To achieve the minimum value, Bob can remap the digit 1 to the digit 0, yielding 890.
        - The difference between these two numbers is 99009.
        """
+
 def maxDifference(num):
     num_str = str(num)
 
