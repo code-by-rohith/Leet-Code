@@ -10,4 +10,4 @@ def main(nums):
 
     return max_len
 
-print(main([1, 3, 2, 2, 5, 2, 3, 7]))  # Output: 5
+print(main([1, 3, 2, 2, 5, 2, 3, 7]))
