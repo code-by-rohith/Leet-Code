@@ -33,5 +33,4 @@ matrix = [
     [3, 1, 2],
     [2, 3, 1]
 ]
-
 print(is_valid_matrix(matrix))
