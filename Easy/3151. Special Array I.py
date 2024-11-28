@@ -9,4 +9,4 @@ def main(nums):
 
     return True
 
-print(main(nums = [1,2,2,2,2,3]))
+print(main(nums = [2,1,2,2,2]))
