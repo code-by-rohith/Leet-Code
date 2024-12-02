@@ -10,7 +10,6 @@ def method1(nums):
         return ans
 nums=[0,1,2,3,4,5]
 print(method1(nums))
-
 num=[0,1,2,3,4,5]
 def main(num):
     n=len(num)
