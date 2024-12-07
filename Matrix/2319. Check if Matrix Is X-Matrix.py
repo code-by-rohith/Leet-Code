@@ -10,8 +10,6 @@ def main(grid):
                     return False
 
     return True
-
-
 samp   = [
          [2, 0, 0, 1],
          [0, 3, 1, 0],
